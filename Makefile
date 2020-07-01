@@ -2,7 +2,7 @@ gen:
 	protoc -I=protos --csharp_out=protos/pb protos/test.proto
 
 clean:
-	rm pb/*.cs
+	rm protos/pb/*.cs
 
 build:
 	dotnet build TOOKAN-TEST
