@@ -15,11 +15,11 @@ namespace NetCore.Docker
         //Raise the event
         //Source: current class pulishing the event
         //args: additional data to send with the evvent if any
-       // public delegate void VideoEncodedHandler(object source, EventArgs args);
+       public delegate void VideoEncodedHandler(object source, EventArgs args);
       
         //Event based on delegate
         //Event is raised when video has been encoded
-        public event VideoEncodedHandler <VideoEventArgs> VideoEncoded;
+        public event VideoEncodedHandler VideoEncoded;
 
         //Method to raise te event and notify all the subcribers
         protected virtual void OnVideoEncodded()
