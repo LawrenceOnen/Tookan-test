@@ -34,9 +34,9 @@ namespace NetCore.Docker.Models
                     key++;
                 };
                 reservation.Id = key;
-                return reservation;
-
             }
+            items[reservation.Id] = reservation;
+            return reservation;
         }
 
         public void DeleteReservation(int id)
@@ -46,7 +46,7 @@ namespace NetCore.Docker.Models
 
         public Reservation UpdateReservation(Reservation reservation)
         {
-            AddReservation(reservation);
+            return AddReservation(reservation);
         }
     }
 }
