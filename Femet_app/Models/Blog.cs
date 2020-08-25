@@ -5,14 +5,14 @@ namespace Femet_app.Models
 {
 
     //The DbContext class for the Blogs and Post
+    //TODO: Connections strings should not be stored in code for production
+    //Also split the classes into their own files.
     public class BlogContext : DbContext
     {
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
 
-        protected override void OnConfiguration(DbContextBuilder options){
-            
-        }
+        protected override void OnConfiguration(DbContextOptionsBuilder options) => options.UseSqlServer("Data Source = blogging.db");
     }
     public class Blog
     {

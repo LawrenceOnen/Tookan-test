@@ -18,3 +18,11 @@ add_ef_sql:
 	
 add_ef_im:
 	dotnet add package Microsoft.EntityFrameworkCore.InMemory
+
+#Create the database
+
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add InitialCreate
+dotnet ef database update
